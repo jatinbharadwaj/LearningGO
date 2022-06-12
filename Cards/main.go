@@ -4,19 +4,15 @@ import "fmt"
 
 func main() {
 
-	var card string = "Ace of Spades"
-	NewCard := "Five of Diamonds" // Same As Above
-	NewCardWithFunction := newCardWithFunction()
+	fmt.Println("Hi There!")
 
-	cards := []string{card, NewCard, NewCardWithFunction}
-	cards = append(cards, "Six of Spades")
+	// Create a new type of deck which is a slice of strings and imported from the package deck
+	cards := deck{"Ace of Spades", newCard()}
 
-	fmt.Println(card)
-	fmt.Println(NewCard)
-	fmt.Println(NewCardWithFunction)
-
+	// print is imported from the deck package
+	cards.print()
 }
-func newCardWithFunction() string {
-	// string literal implies the return type is String
-	return "Ace of Diamonds"
+
+func newCard() string {
+	return "Five of Diamonds"
 }
